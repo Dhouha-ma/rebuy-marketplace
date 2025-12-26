@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+
+import { of } from 'rxjs';
 
 import { OfferDetails } from './offer-details';
-import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
 
 describe('OfferDetails', () => {
   let component: OfferDetails;
@@ -25,6 +26,7 @@ describe('OfferDetails', () => {
 
     fixture = TestBed.createComponent(OfferDetails);
     component = fixture.componentInstance;
+
     await fixture.whenStable();
   });
 

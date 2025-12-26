@@ -15,6 +15,7 @@ export class VoteButton {
   @Output() vote = new EventEmitter<void>();
 
   public onClick() {
+    this.active = !this.active;
     this.vote.emit();
   }
 }

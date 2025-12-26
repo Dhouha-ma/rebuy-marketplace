@@ -19,6 +19,7 @@ describe('Navbar', () => {
     fixture = TestBed.createComponent(Navbar);
     component = fixture.componentInstance;
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
+
     await fixture.whenStable();
   });
 

@@ -13,6 +13,7 @@ describe('Button', () => {
 
     fixture = TestBed.createComponent(Button);
     component = fixture.componentInstance;
+
     await fixture.whenStable();
   });
 

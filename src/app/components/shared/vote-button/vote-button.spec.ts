@@ -13,6 +13,7 @@ describe('VoteButton', () => {
 
     fixture = TestBed.createComponent(VoteButton);
     component = fixture.componentInstance;
+
     await fixture.whenStable();
   });
 

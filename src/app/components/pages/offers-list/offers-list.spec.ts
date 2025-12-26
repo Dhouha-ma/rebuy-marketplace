@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 import { OffersList } from './offers-list';
-import { OFFERS_MOCK } from '../../mock-data/offer-mock';
-import { Offers } from '../../services/offers';
-import { Router } from '@angular/router';
+import { Offers } from '../../../services/offers';
+import { OFFERS_MOCK } from '../../../mock-data/offer-mock';
 
 describe('OffersList', () => {
   let component: OffersList;
