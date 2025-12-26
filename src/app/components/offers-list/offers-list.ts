@@ -25,19 +25,19 @@ export class OffersList implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.offers= this.offersService.getAllOffers();
+    this.offers = this.offersService.getAllOffers();
   }
-  
+
   public onLike(offer: Offer) {
     const result = this.offersService.toggleLike(offer, this.liked, this.disliked);
-    
+
     this.liked = result.liked;
     this.disliked = result.disliked;
   }
 
   public onDislike(offer: Offer) {
     const result = this.offersService.toggleDislike(offer, this.liked, this.disliked);
-    
+
     this.liked = result.liked;
     this.disliked = result.disliked;
   }

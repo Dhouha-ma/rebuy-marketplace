@@ -1,27 +1,35 @@
 @if (offer) {
-  <div class="details-container">
-    <app-card [offer]="offer">
-      <div class="votes">
-        <app-vote-button
-          type="like"
-          [icon]="'⬆'"
-          [count]="offer.likes"
-          [active]="false"
-          (vote)="onLike(offer)">
-        </app-vote-button>
+  <div class="page-container">
+    <h1>Offer Details</h1>
 
-        <app-vote-button
-          type="dislike"
-          [icon]="'⬇'"
-          [count]="offer.dislikes"
-          [active]="false"
-          (vote)="onDislike(offer)">
-        </app-vote-button>
-      </div>
+    <div class="details-container">
+      <button class="back-btn" (click)="goBack()">← Back to Offers</button>
 
-      <div class="actions">
-        <button class="buy-btn">Buy Now →</button>
-      </div>
-    </app-card>
+      <app-card [offer]="offer">
+        <div class="votes">
+          <app-vote-button
+            type="like"
+            [icon]="'⬆'"
+            [count]="offer.likes"
+            [active]="false"
+            (vote)="onLike(offer)"
+          >
+          </app-vote-button>
+
+          <app-vote-button
+            type="dislike"
+            [icon]="'⬇'"
+            [count]="offer.dislikes"
+            [active]="false"
+            (vote)="onDislike(offer)"
+          >
+          </app-vote-button>
+        </div>
+
+        <div class="actions">
+          <app-button label="Buy Now →"></app-button>
+        </div>
+      </app-card>
+    </div>
   </div>
 }
