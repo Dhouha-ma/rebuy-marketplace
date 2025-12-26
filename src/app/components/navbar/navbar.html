@@ -1,0 +1,63 @@
+<nav class="navbar">
+  <div class="left-section">
+    <div class="logo">Rebuy Marketplace</div>
+  </div>
+
+  <!-- Desktop Menu -->
+  <ul class="navigation desktop-nav">
+    <li class="nav-item" [class.active]="currentPage === 'offers'" (click)="navigateTo('offers')">
+      Offers
+    </li>
+
+    <li
+      class="nav-item"
+      [class.active]="currentPage === 'my-orders'"
+      (click)="navigateTo('my-orders')"
+    >
+      My Orders
+    </li>
+
+    <li class="nav-item" [class.active]="currentPage === 'contact'" (click)="navigateTo('contact')">
+      Contact
+    </li>
+  </ul>
+
+  <div class="nav-actions desktop-nav">
+    <button class="icon-btn">🛒</button>
+    <button class="icon-btn">👤</button>
+  </div>
+
+  <button class="hamburger" (click)="toggleMenu()">☰</button>
+
+  <!-- Mobile Menu -->
+  <ul class="mobile-nav" [class.open]="menuOpen">
+    <li
+      class="nav-item"
+      [class.active]="currentPage === 'offers'"
+      (click)="navigateTo('offers'); toggleMenu()"
+    >
+      Offers
+    </li>
+
+    <li
+      class="nav-item"
+      [class.active]="currentPage === 'my-orders'"
+      (click)="navigateTo('my-orders'); toggleMenu()"
+    >
+      My Orders
+    </li>
+
+    <li
+      class="nav-item"
+      [class.active]="currentPage === 'contact'"
+      (click)="navigateTo('contact'); toggleMenu()"
+    >
+      Contact
+    </li>
+
+    <div class="mobile-actions">
+      <button class="icon-btn">🛒</button>
+      <button class="icon-btn">👤</button>
+    </div>
+  </ul>
+</nav>
