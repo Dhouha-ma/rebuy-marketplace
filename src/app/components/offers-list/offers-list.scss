@@ -1,0 +1,26 @@
+.page-container {
+  padding: 30px 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.offer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.card-wrapper {
+  flex: 0 0 calc(50% - 25px);
+  max-width: calc(50% - 25px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .card-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

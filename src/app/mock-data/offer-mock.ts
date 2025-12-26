@@ -1,0 +1,38 @@
+export const OFFERS_MOCK = [
+  {
+    id: 1,
+    title: 'Wireless Earbuds',
+    description: 'High-quality wireless earbuds with noise cancellation.',
+    price: 59,
+    likes: 59,
+    dislikes: 15,
+    image: 'assets/images/earbuds.png',
+  },
+  {
+    id: 2,
+    title: 'Smartwatch',
+    description: 'Track your fitness and receive notifications.',
+    price: 199,
+    likes: 40,
+    dislikes: 2,
+    // image: 'assets/images/smartwatch.jpg'
+  },
+  {
+    id: 3,
+    title: 'Bluetooth Speaker',
+    description: 'Compact waterproof speaker with rich sound.',
+    price: 75,
+    likes: 75,
+    dislikes: 5,
+    // image: 'assets/images/speaker.jpg'
+  },
+  {
+    id: 4,
+    title: 'Wireless Mouse',
+    description: 'Ergonomic mouse with high precision.',
+    price: 64,
+    likes: 64,
+    dislikes: 6,
+    // image: 'assets/images/mouse.jpg'
+  },
+];

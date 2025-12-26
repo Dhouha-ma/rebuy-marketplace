@@ -1,0 +1,25 @@
+<div class="offer-card">
+  <div class="offer-image">
+    <img [src]="offer.image" />
+  </div>
+
+  <div class="offer-content">
+    <h2 class="title">{{ offer.title }}</h2>
+    <p class="description">{{ offer.description }}</p>
+
+    @if (offer.likes || offer.dislikes) {
+      <div class="stats">
+        <span class="stat positive">⬆ {{ offer.likes }}</span>
+        <span class="stat negative">⬇ {{ offer.dislikes }}</span>
+      </div>
+    }
+
+    <div class="bottom-row">
+      @if (offer.price) {
+          <div class="price">{{ offer.price }}</div>
+      }
+
+      <button class="view-btn">View Offer →</button>
+    </div>
+  </div>
+</div>
