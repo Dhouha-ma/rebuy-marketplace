@@ -1,6 +1,6 @@
 .button {
-  background: #3454e5;
-  color: #fff;
+  background: var(--dark-blue);
+  color: var(--white);
   border: none;
   padding: 10px 18px;
   border-radius: 10px;
@@ -8,6 +8,6 @@
   font-weight: 500;
 
   &:hover {
-    background: #3f63f7;
+    background: var(--dark-blue-hover);
   }
 }

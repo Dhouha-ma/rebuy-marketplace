@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #ffffff;
+  background: var(--white);
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
@@ -23,7 +23,7 @@
   height: 140px;
   border-radius: 15px;
   object-fit: cover;
-  background: #e5e7eb;
+  background: var(--light-gray);
 
   @media (max-width: 768px) {
     width: 100%;
@@ -42,7 +42,7 @@
 }
 
 .description {
-  color: #666;
+  color: var(--dark-gray);
   margin: 8px 0 12px;
   font-size: 15px;
 }
@@ -59,13 +59,13 @@
     font-weight: 500;
 
     &.positive {
-      background: #e5e9ff;
-      color: #3b57f0;
+      background: var(--light-blue);
+      color: var(--dark-blue);
     }
 
     &.negative {
-      background: #ffe5e5;
-      color: #d63636;
+      background: var(--light-red);
+      color: var(--dark-red);
     }
   }
 }
