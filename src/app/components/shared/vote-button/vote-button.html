@@ -1,0 +1,9 @@
+<button
+  class="stat"
+  [class.like]="type === 'like'"
+  [class.dislike]="type === 'dislike'"
+  [class.active]="active"
+  (click)="onClick()"
+>
+  {{ icon }} {{ count }}
+</button>

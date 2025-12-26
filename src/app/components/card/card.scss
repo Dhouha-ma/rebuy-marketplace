@@ -57,23 +57,6 @@
     justify-content: center;
     width: 100%;
   }
-
-  .stat {
-    padding: 4px 10px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-
-    &.positive {
-      background: var(--light-blue);
-      color: var(--dark-blue);
-    }
-
-    &.negative {
-      background: var(--light-red);
-      color: var(--dark-red);
-    }
-  }
 }
 
 .bottom-row {

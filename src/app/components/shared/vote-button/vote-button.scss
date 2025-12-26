@@ -1,0 +1,39 @@
+.stat {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  &.like {
+    background: var(--light-blue);
+    color: var(--dark-blue);
+
+    &:hover {
+      background: var(--light-blue-hover);
+    }
+
+    &.active {
+      background: var(--light-blue-hover);
+    }
+  }
+
+  &.dislike {
+    background: var(--light-red);
+    color: var(--dark-red);
+
+    &:hover {
+      background: var(--light-red-hover);
+    }
+
+    &.active {
+      background: var(--light-red-hover);
+    }
+  }
+}

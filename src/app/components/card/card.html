@@ -9,8 +9,22 @@
 
     @if (offer.likes || offer.dislikes) {
       <div class="stats">
-        <span class="stat positive">⬆ {{ offer.likes }}</span>
-        <span class="stat negative">⬇ {{ offer.dislikes }}</span>
+        <app-vote-button
+          type="like"
+          [icon]="'⬆'"
+          [count]="offer.likes"
+          [active]="liked"
+          (vote)="onLike()"
+        >
+        </app-vote-button>
+        <app-vote-button
+          type="dislike"
+          icon="⬇"
+          [count]="offer.dislikes"
+          [active]="disliked"
+          (vote)="onDislike()"
+        >
+        </app-vote-button>
       </div>
     }
 
