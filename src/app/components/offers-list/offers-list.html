@@ -3,7 +3,34 @@
 
   <div class="offer-container">
     @for (offer of offers | sortOffers: 'likes'; track offer.id) {
-      <app-card [offer]="offer" class="card-wrapper"></app-card>
+        <app-card [offer]="offer" class="card-wrapper">
+          <div class="votes">
+            <app-vote-button
+              type="like"
+              [icon]="'⬆'"
+              [count]="offer.likes"
+              [active]="false"
+              (vote)="onLike(offer)"
+            >
+            </app-vote-button>
+
+            <app-vote-button
+              type="dislike"
+              [icon]="'⬇'"
+              [count]="offer.dislikes"
+              [active]="false"
+              (vote)="onDislike(offer)"
+            >
+            </app-vote-button>
+          </div>
+
+          <div class="actions">
+            <app-button
+              label="View Offer →"
+              (click)="navigateToOfferDetails(offer.id)"
+            ></app-button>
+          </div>
+        </app-card>
     }
   </div>
 </div>

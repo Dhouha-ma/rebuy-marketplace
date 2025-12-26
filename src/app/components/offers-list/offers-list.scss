@@ -24,3 +24,15 @@
     max-width: 100%;
   }
 }
+
+.votes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  justify-content: flex-start;
+
+  @media (max-width: 600px) {
+    justify-content: center;
+    width: 100%;
+  }
+}

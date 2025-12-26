@@ -7,33 +7,14 @@
     <h2 class="title">{{ offer.title }}</h2>
     <p class="description">{{ offer.description }}</p>
 
-    @if (offer.likes || offer.dislikes) {
-      <div class="stats">
-        <app-vote-button
-          type="like"
-          [icon]="'⬆'"
-          [count]="offer.likes"
-          [active]="liked"
-          (vote)="onLike()"
-        >
-        </app-vote-button>
-        <app-vote-button
-          type="dislike"
-          icon="⬇"
-          [count]="offer.dislikes"
-          [active]="disliked"
-          (vote)="onDislike()"
-        >
-        </app-vote-button>
-      </div>
-    }
+    <ng-content select=".votes"></ng-content>
 
     <div class="bottom-row">
-      @if (offer.price) {
-        <div class="price">{{ offer.price | currency: 'EUR' : 'symbol' : '1.0-0' }}</div>
-      }
+      <div class="price">
+        {{ offer.price | currency: 'EUR' : 'symbol' : '1.0-0' }}
+      </div>
 
-      <app-button label="View Offer →"></app-button>
+      <ng-content select=".actions"></ng-content>
     </div>
   </div>
 </div>

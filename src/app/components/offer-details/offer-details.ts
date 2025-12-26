@@ -1,33 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-import { Card } from '../card/card';
-import { SortOffersPipe } from '../../pipes/sort-offers-pipe';
-import { VoteButton } from '../shared/vote-button/vote-button';
 import { Offer } from '../../types/offer-type';
-import { Button } from '../shared/button/button';
 import { Offers } from '../../services/offers';
+import { Card } from '../card/card';
+import { VoteButton } from '../shared/vote-button/vote-button';
 
 @Component({
-  selector: 'app-offers-list',
-  imports: [Card, SortOffersPipe, VoteButton, Button],
-  templateUrl: './offers-list.html',
-  styleUrl: './offers-list.scss',
+  selector: 'app-offer-details',
+  imports: [CommonModule, Card, VoteButton],
+  templateUrl: './offer-details.html',
+  styleUrl: './offer-details.scss',
 })
-export class OffersList implements OnInit {
-  public offers: Offer[] = [];
+export class OfferDetails implements OnInit{
+  public offer: Offer | undefined;
   public liked = false;
   public disliked = false;
 
   constructor(
-    private router: Router,
+    private route: ActivatedRoute,
     private offersService: Offers,
-  ) {}
+  ) {
+    
+  }
 
   ngOnInit(): void {
-    this.offers= this.offersService.getAllOffers();
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.offer = this.offersService.getOfferById(id);
   }
-  
+
   public onLike(offer: Offer) {
     const result = this.offersService.toggleLike(offer, this.liked, this.disliked);
     
@@ -40,9 +43,5 @@ export class OffersList implements OnInit {
     
     this.liked = result.liked;
     this.disliked = result.disliked;
-  }
-
-  public navigateToOfferDetails(offerId: number) {
-    this.router.navigate(['/offers', offerId]);
   }
 }
