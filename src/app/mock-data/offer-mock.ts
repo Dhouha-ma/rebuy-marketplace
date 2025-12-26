@@ -15,7 +15,7 @@ export const OFFERS_MOCK = [
     price: 199,
     likes: 40,
     dislikes: 2,
-    // image: 'assets/images/smartwatch.jpg'
+    image: 'assets/images/smartwatch.png',
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const OFFERS_MOCK = [
     price: 75,
     likes: 75,
     dislikes: 5,
-    // image: 'assets/images/speaker.jpg'
+    image: 'assets/images/speaker.png',
   },
   {
     id: 4,
@@ -33,6 +33,6 @@ export const OFFERS_MOCK = [
     price: 64,
     likes: 64,
     dislikes: 6,
-    // image: 'assets/images/mouse.jpg'
+    image: 'assets/images/mouse.png',
   },
 ];
