@@ -1,0 +1,10 @@
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+
+  .list {
+    list-style-type: none;
+    cursor: pointer;
+  }
+}
