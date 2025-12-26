@@ -6,6 +6,7 @@
       <button class="back-btn" (click)="goBack()">← Back to Offers</button>
 
       <app-card [offer]="offer">
+        <div class="description">{{ offer.details }}</div>
         <div class="votes">
           <app-vote-button
             type="like"

@@ -1,5 +1,5 @@
 .page-container {
-  padding: 30px 40px;
+  padding: 10px 40px;
   max-width: 1400px;
   margin: auto;
 }
@@ -115,4 +115,10 @@
   &:hover {
     color: var(--light-blue);
   }
+}
+
+.description {
+  color: var(--dark-gray);
+  margin: 8px 0 12px;
+  font-size: 13px;
 }
