@@ -11,6 +11,7 @@ export const OFFERS_MOCK: Offer[] = [
     likes: 59,
     dislikes: 15,
     image: 'assets/images/earbuds.png',
+    productUrl: 'https://en.rebuy.de/i,11390169/kopfhoerer/bose-quietcomfort-earbuds-black',
   },
   {
     id: 2,
@@ -22,6 +23,8 @@ export const OFFERS_MOCK: Offer[] = [
     likes: 40,
     dislikes: 2,
     image: 'assets/images/smartwatch.png',
+    productUrl:
+      'https://en.rebuy.de/i,15543026/smartwatches/apple-watch-series-10-46-mm-aluminiumgehaeuse-diamantschwarz-wi-fi',
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ export const OFFERS_MOCK: Offer[] = [
     likes: 75,
     dislikes: 5,
     image: 'assets/images/speaker.png',
+    productUrl: 'https://en.rebuy.de/i,11168460/lautsprecher/bose-home-speaker-300-schwarz',
   },
   {
     id: 4,
@@ -44,5 +48,7 @@ export const OFFERS_MOCK: Offer[] = [
     likes: 64,
     dislikes: 6,
     image: 'assets/images/mouse.png',
+    productUrl:
+      'https://en.rebuy.de/i,10971952/mouse-und-trackpad/apple-magic-mouse-2-bluetooth-space-grau',
   },
 ];

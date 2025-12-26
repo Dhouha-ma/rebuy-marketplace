@@ -48,4 +48,8 @@ export class OfferDetails implements OnInit {
   public goBack() {
     this.router.navigate(['/offers']);
   }
+
+  public proceedToPurchase(offer: Offer) {
+    window.location.href = offer.productUrl;
+  }
 }
