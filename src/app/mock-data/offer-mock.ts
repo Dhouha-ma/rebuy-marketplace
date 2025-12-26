@@ -1,4 +1,6 @@
-export const OFFERS_MOCK = [
+import { Offer } from '../types/offer-type';
+
+export const OFFERS_MOCK: Offer[] = [
   {
     id: 1,
     title: 'Wireless Earbuds',
