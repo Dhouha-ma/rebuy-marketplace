@@ -7,3 +7,5 @@ export type Offer = {
   dislikes: number;
   image: string;
 };
+
+export type SortableOfferField = keyof Offer;
