@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { Offer } from '../../types/offer-type';
-import { Offers } from '../../services/offers';
-import { Card } from '../card/card';
-import { VoteButton } from '../shared/vote-button/vote-button';
-import { Button } from '../shared/button/button';
+import { Offer } from '../../../types/offer-type';
+import { Offers } from '../../../services/offers';
+import { Card } from '../../card/card';
+import { Button } from '../../shared/button/button';
+import { VoteButton } from '../../shared/vote-button/vote-button';
 
 @Component({
   selector: 'app-offer-details',

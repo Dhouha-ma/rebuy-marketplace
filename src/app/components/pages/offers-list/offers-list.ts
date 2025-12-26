@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Card } from '../card/card';
-import { SortOffersPipe } from '../../pipes/sort-offers-pipe';
-import { VoteButton } from '../shared/vote-button/vote-button';
-import { Offer } from '../../types/offer-type';
-import { Button } from '../shared/button/button';
-import { Offers } from '../../services/offers';
+import { Card } from '../../card/card';
+import { SortOffersPipe } from '../../../pipes/sort-offers-pipe';
+import { VoteButton } from '../../shared/vote-button/vote-button';
+import { Offer } from '../../../types/offer-type';
+import { Button } from '../../shared/button/button';
+import { Offers } from '../../../services/offers';
 
 @Component({
   selector: 'app-offers-list',
