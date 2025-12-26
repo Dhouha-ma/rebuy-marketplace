@@ -32,17 +32,17 @@ export class OfferDetails implements OnInit {
   }
 
   public onLike(offer: Offer) {
-    const result = this.offersService.toggleLike(offer, this.liked, this.disliked);
+    const toggleLike = this.offersService.toggleLike(offer, this.liked, this.disliked);
 
-    this.liked = result.liked;
-    this.disliked = result.disliked;
+    this.liked = toggleLike.liked;
+    this.disliked = toggleLike.disliked;
   }
 
   public onDislike(offer: Offer) {
-    const result = this.offersService.toggleDislike(offer, this.liked, this.disliked);
+    const toggleDislike = this.offersService.toggleDislike(offer, this.liked, this.disliked);
 
-    this.liked = result.liked;
-    this.disliked = result.disliked;
+    this.liked = toggleDislike.liked;
+    this.disliked = toggleDislike.disliked;
   }
 
   public goBack() {

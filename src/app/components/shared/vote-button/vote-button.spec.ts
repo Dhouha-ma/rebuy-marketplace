@@ -19,4 +19,14 @@ describe('VoteButton', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('onClick: on button click behavior', () => {
+    it('should emit vote event when onClick is called', () => {
+      spyOn(component.vote, 'emit');
+
+      component.onClick();
+
+      expect(component.vote.emit).toHaveBeenCalledTimes(1);
+    });
+  });
 });
