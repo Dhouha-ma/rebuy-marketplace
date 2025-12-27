@@ -6,7 +6,15 @@
       <button class="back-btn" (click)="goBack()">← Back to Offers</button>
 
       <app-card [offer]="offer">
-        <div class="description">{{ offer.details }}</div>
+        <div class="description">
+          <span>{{ offer.details }}</span>
+
+          <div class="info-row">
+            <span>📦 Fast delivery (2–4 days)</span>
+            <span>↩️ 30-day returns</span>
+            <span>🛡️ 12-month warranty</span>
+          </div>
+        </div>
         <div class="votes">
           <app-vote-button
             type="like"

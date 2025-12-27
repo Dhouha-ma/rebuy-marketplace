@@ -51,4 +51,30 @@ export const OFFERS_MOCK: Offer[] = [
     productUrl:
       'https://en.rebuy.de/i,10971952/mouse-und-trackpad/apple-magic-mouse-2-bluetooth-space-grau',
   },
+  {
+    id: 5,
+    title: 'Mechanical Keyboard',
+    description: 'Tactile mechanical keyboard with RGB lighting.',
+    details:
+      'Upgrade your typing experience with a high-quality mechanical keyboard featuring tactile switches and customizable RGB backlighting. Built for speed, accuracy, and durability, it’s ideal for both gaming sessions and long workdays.',
+    price: 129,
+    likes: 52,
+    dislikes: 4,
+    image: 'assets/images/keyboard.png',
+    productUrl:
+      'https://en.rebuy.de/i,11432011/tastaturen/logitech-g915-lightspeed-tkl-rgb-mechanical-gaming-keyboard',
+  },
+  {
+    id: 6,
+    title: 'Noise-Canceling Headphones',
+    description: 'Over-ear headphones with premium noise cancellation.',
+    details:
+      'Immerse yourself in music with premium over-ear headphones offering industry-leading noise cancellation. Enjoy deep bass, clear mids, and all-day comfort with a long-lasting battery — perfect for commuting, work, or relaxation.',
+    price: 249,
+    likes: 88,
+    dislikes: 7,
+    image: 'assets/images/headphones.png',
+    productUrl:
+      'https://en.rebuy.de/i,11168457/kopfhoerer/bose-noise-cancelling-headphones-700-schwarz',
+  },
 ];
