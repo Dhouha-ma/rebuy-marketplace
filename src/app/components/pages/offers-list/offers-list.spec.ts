@@ -12,12 +12,14 @@ describe('OffersList', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-    const spyService = jasmine.createSpyObj('OffersService', [
+    const spyService = jasmine.createSpyObj<Offers>('Offers', [
       'toggleLike',
       'toggleDislike',
       'setVotes',
+      'getAllOffers',
     ]);
-    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    const routerSpy = jasmine.createSpyObj<Router>('Router', ['navigate']);
+    spyService.getAllOffers.and.returnValue(OFFERS_MOCK);
 
     await TestBed.configureTestingModule({
       imports: [OffersList],
@@ -32,15 +34,20 @@ describe('OffersList', () => {
     offersService = TestBed.inject(Offers) as jasmine.SpyObj<Offers>;
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
 
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('onLike: handle like button click', () => {
-    it('should call offersService.toggleLike and update liked/disliked values', () => {
+  it('should load offers from the service', () => {
+    expect(offersService.getAllOffers).toHaveBeenCalled();
+    expect(component.offers()).toEqual(OFFERS_MOCK);
+  });
+
+  describe('onLike', () => {
+    it('should call offersService.toggleLike', () => {
       offersService.toggleLike.and.returnValue({ liked: true, disliked: false });
 
       component.onLike(OFFERS_MOCK[1]);
@@ -49,8 +56,8 @@ describe('OffersList', () => {
     });
   });
 
-  describe('onDislike: handle on dislike button click', () => {
-    it('should call toggleDislike and update liked/disliked state', () => {
+  describe('onDislike', () => {
+    it('should call offersService.toggleDislike', () => {
       offersService.toggleDislike.and.returnValue({ liked: false, disliked: true });
 
       component.onDislike(OFFERS_MOCK[0]);

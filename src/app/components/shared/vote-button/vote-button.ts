@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
   imports: [],
   templateUrl: './vote-button.html',
   styleUrl: './vote-button.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VoteButton {
   @Input() icon: string = '';

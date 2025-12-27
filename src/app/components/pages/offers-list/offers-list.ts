@@ -19,7 +19,7 @@ export class OffersList {
 
   constructor(
     private router: Router,
-    private offersService: Offers
+    private offersService: Offers,
   ) {
     this.offers.set(this.offersService.getAllOffers());
   }

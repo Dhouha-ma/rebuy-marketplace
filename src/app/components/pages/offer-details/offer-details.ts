@@ -13,7 +13,7 @@ import { VoteButton } from '../../shared/vote-button/vote-button';
   imports: [CommonModule, Card, VoteButton, Button],
   templateUrl: './offer-details.html',
   styleUrl: './offer-details.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OfferDetails implements OnInit {
   public offer: Offer | undefined;

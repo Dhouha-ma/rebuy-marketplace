@@ -8,7 +8,7 @@ import { Offer } from '../../types/offer-type';
   imports: [CommonModule],
   templateUrl: './card.html',
   styleUrl: './card.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Card {
   @Input() offer!: Offer;

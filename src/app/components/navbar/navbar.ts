@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   imports: [],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Navbar {
   public menuOpen = false;
