@@ -29,14 +29,12 @@ describe('Offers', () => {
       const id = 2;
       const offer = service.getOfferById(id);
 
-      expect(offer).toEqual(OFFERS_MOCK.find((o) => o.id === id));
+      expect(offer).toEqual(OFFERS_MOCK.find((offer) => offer.id === id));
       expect(offer?.id).toBe(id);
     });
 
     it('should return undefined for a non-existing id', () => {
-      const id = 9999;
-      const offer = service.getOfferById(id);
-
+      const offer = service.getOfferById(9999);
       expect(offer).toBeUndefined();
     });
   });
@@ -45,21 +43,21 @@ describe('Offers', () => {
     it('should increase likes when not previously liked', () => {
       const offer = { likes: 0, dislikes: 0 } as any;
 
-      const result = service.toggleLike(offer, false, false);
+      const result = service.toggleLike(offer);
 
       expect(offer.likes).toBe(1);
-      expect(result.liked).toBeTrue();
-      expect(result.disliked).toBeFalse();
+      expect(offer.dislikes).toBe(0);
+      expect(result).toEqual({ liked: true, disliked: false });
     });
 
     it('should decrease likes when already liked', () => {
       const offer = { likes: 5, dislikes: 0 } as any;
 
-      const result = service.toggleLike(offer, true, false);
+      service.toggleLike(offer);
+      const result = service.toggleLike(offer);
 
-      expect(offer.likes).toBe(4);
-      expect(result.liked).toBeFalse();
-      expect(result.disliked).toBeFalse();
+      expect(offer.likes).toBe(5);
+      expect(result).toEqual({ liked: false, disliked: false });
     });
   });
 
@@ -67,21 +65,21 @@ describe('Offers', () => {
     it('should increase dislikes when not previously disliked', () => {
       const offer = { likes: 0, dislikes: 0 } as any;
 
-      const result = service.toggleDislike(offer, false, false);
+      const result = service.toggleDislike(offer);
 
       expect(offer.dislikes).toBe(1);
-      expect(result.disliked).toBeTrue();
-      expect(result.liked).toBeFalse();
+      expect(offer.likes).toBe(0);
+      expect(result).toEqual({ liked: false, disliked: true });
     });
 
     it('should decrease dislikes when already disliked', () => {
       const offer = { likes: 0, dislikes: 4 } as any;
 
-      const result = service.toggleDislike(offer, false, true);
+      service.toggleDislike(offer);
+      const result = service.toggleDislike(offer);
 
-      expect(offer.dislikes).toBe(3);
-      expect(result.disliked).toBeFalse();
-      expect(result.liked).toBeFalse();
+      expect(offer.dislikes).toBe(4);
+      expect(result).toEqual({ liked: false, disliked: false });
     });
   });
 });

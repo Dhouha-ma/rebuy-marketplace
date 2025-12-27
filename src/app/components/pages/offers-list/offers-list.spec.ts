@@ -12,7 +12,11 @@ describe('OffersList', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-    const spyService = jasmine.createSpyObj('OffersService', ['toggleLike', 'toggleDislike']);
+    const spyService = jasmine.createSpyObj('OffersService', [
+      'toggleLike',
+      'toggleDislike',
+      'setVotes',
+    ]);
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
     await TestBed.configureTestingModule({
@@ -28,9 +32,6 @@ describe('OffersList', () => {
     offersService = TestBed.inject(Offers) as jasmine.SpyObj<Offers>;
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
 
-    component.liked = false;
-    component.disliked = false;
-
     await fixture.whenStable();
   });
 
@@ -44,10 +45,7 @@ describe('OffersList', () => {
 
       component.onLike(OFFERS_MOCK[1]);
 
-      expect(offersService.toggleLike).toHaveBeenCalledWith(OFFERS_MOCK[1], false, false);
-
-      expect(component.liked).toBe(true);
-      expect(component.disliked).toBe(false);
+      expect(offersService.toggleLike).toHaveBeenCalledWith(OFFERS_MOCK[1]);
     });
   });
 
@@ -57,10 +55,7 @@ describe('OffersList', () => {
 
       component.onDislike(OFFERS_MOCK[0]);
 
-      expect(offersService.toggleDislike).toHaveBeenCalledWith(OFFERS_MOCK[0], false, false);
-
-      expect(component.liked).toBe(false);
-      expect(component.disliked).toBe(true);
+      expect(offersService.toggleDislike).toHaveBeenCalledWith(OFFERS_MOCK[0]);
     });
   });
 

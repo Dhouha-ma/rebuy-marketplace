@@ -16,8 +16,6 @@ import { VoteButton } from '../../shared/vote-button/vote-button';
 })
 export class OfferDetails implements OnInit {
   public offer: Offer | undefined;
-  public liked = false;
-  public disliked = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,17 +30,15 @@ export class OfferDetails implements OnInit {
   }
 
   public onLike(offer: Offer) {
-    const toggleLike = this.offersService.toggleLike(offer, this.liked, this.disliked);
+    const toggleLike = this.offersService.toggleLike(offer);
 
-    this.liked = toggleLike.liked;
-    this.disliked = toggleLike.disliked;
+    this.offersService.setVotes(toggleLike);
   }
 
   public onDislike(offer: Offer) {
-    const toggleDislike = this.offersService.toggleDislike(offer, this.liked, this.disliked);
+    const toggleDislike = this.offersService.toggleDislike(offer);
 
-    this.liked = toggleDislike.liked;
-    this.disliked = toggleDislike.disliked;
+    this.offersService.setVotes(toggleDislike);
   }
 
   public goBack() {

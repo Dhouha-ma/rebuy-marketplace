@@ -1,11 +1,10 @@
 .vote {
   padding: 6px 14px;
-  border-radius: 12px;
+  border-radius: var(--border-radius-12);
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   border: none;
-  transition: background-color 0.2s ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;

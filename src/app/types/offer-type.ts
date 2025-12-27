@@ -11,3 +11,5 @@ export type Offer = {
 };
 
 export type SortableOfferField = keyof Offer;
+
+export type Vote = { liked: boolean; disliked: boolean };

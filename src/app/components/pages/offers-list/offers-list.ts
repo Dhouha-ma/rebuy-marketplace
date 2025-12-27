@@ -16,8 +16,6 @@ import { Offers } from '../../../services/offers';
 })
 export class OffersList implements OnInit {
   public offers: Offer[] = [];
-  public liked = false;
-  public disliked = false;
 
   constructor(
     private router: Router,
@@ -29,17 +27,15 @@ export class OffersList implements OnInit {
   }
 
   public onLike(offer: Offer) {
-    const toggleLike = this.offersService.toggleLike(offer, this.liked, this.disliked);
+    const toggleLike = this.offersService.toggleLike(offer);
 
-    this.liked = toggleLike.liked;
-    this.disliked = toggleLike.disliked;
+    this.offersService.setVotes(toggleLike);
   }
 
   public onDislike(offer: Offer) {
-    const toggleDislike = this.offersService.toggleDislike(offer, this.liked, this.disliked);
+    const toggleDislike = this.offersService.toggleDislike(offer);
 
-    this.liked = toggleDislike.liked;
-    this.disliked = toggleDislike.disliked;
+    this.offersService.setVotes(toggleDislike);
   }
 
   public navigateToOfferDetails(offerId: number) {

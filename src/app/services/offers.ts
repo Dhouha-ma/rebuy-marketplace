@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 
 import { OFFERS_MOCK } from '../mock-data/offer-mock';
-import { Offer } from '../types/offer-type';
+import { Offer, Vote } from '../types/offer-type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class Offers {
+  private liked = false;
+  private disliked = false;
+
   public getAllOffers(): Offer[] {
     return OFFERS_MOCK;
   }
@@ -15,37 +18,48 @@ export class Offers {
     return OFFERS_MOCK.find((offer) => offer.id === id);
   }
 
-  public toggleLike(offer: Offer, liked: boolean, disliked: boolean) {
-    if (disliked) {
+  public toggleLike(offer: Offer): Vote {
+    if (this.disliked) {
       offer.dislikes--;
-      disliked = false;
+      this.disliked = false;
     }
 
-    if (liked) {
+    if (this.liked) {
       offer.likes--;
-      liked = false;
+      this.liked = false;
     } else {
       offer.likes++;
-      liked = true;
+      this.liked = true;
     }
 
-    return { liked, disliked };
+    return {
+      liked: this.liked,
+      disliked: this.disliked,
+    };
   }
 
-  public toggleDislike(offer: Offer, liked: boolean, disliked: boolean) {
-    if (liked) {
+  public toggleDislike(offer: Offer): Vote {
+    if (this.liked) {
       offer.likes--;
-      liked = false;
+      this.liked = false;
     }
 
-    if (disliked) {
+    if (this.disliked) {
       offer.dislikes--;
-      disliked = false;
+      this.disliked = false;
     } else {
       offer.dislikes++;
-      disliked = true;
+      this.disliked = true;
     }
 
-    return { liked, disliked };
+    return {
+      liked: this.liked,
+      disliked: this.disliked,
+    };
+  }
+
+  public setVotes(toggleDislike: Vote) {
+    this.liked = toggleDislike.liked;
+    this.disliked = toggleDislike.disliked;
   }
 }

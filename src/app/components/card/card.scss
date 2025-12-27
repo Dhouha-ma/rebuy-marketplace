@@ -4,7 +4,7 @@
   gap: 20px;
   background: var(--white);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: var(--border-radius-20);
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
   min-height: 200px;
 
@@ -21,7 +21,7 @@
 .offer-image img {
   width: 160px;
   height: 140px;
-  border-radius: 15px;
+  border-radius: var(--border-radius-14);
   object-fit: cover;
   background: var(--light-gray);
 
