@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +13,7 @@ import { VoteButton } from '../../shared/vote-button/vote-button';
   imports: [CommonModule, Card, VoteButton, Button],
   templateUrl: './offer-details.html',
   styleUrl: './offer-details.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OfferDetails implements OnInit {
   public offer: Offer | undefined;

@@ -2,7 +2,7 @@
   <h1>Offers</h1>
 
   <div class="offer-container">
-    @for (offer of offers | sortOffers: 'likes'; track offer.id) {
+    @for (offer of offers() | sortOffers: 'likes'; track offer.id) {
       <app-card [offer]="offer" class="card-wrapper">
         <div class="votes">
           <app-vote-button

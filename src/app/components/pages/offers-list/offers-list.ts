@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Card } from '../../card/card';
@@ -14,28 +14,28 @@ import { Offers } from '../../../services/offers';
   templateUrl: './offers-list.html',
   styleUrl: './offers-list.scss',
 })
-export class OffersList implements OnInit {
-  public offers: Offer[] = [];
+export class OffersList {
+  offers = signal<Offer[]>([]);
 
   constructor(
     private router: Router,
-    private offersService: Offers,
-  ) {}
-
-  ngOnInit(): void {
-    this.offers = this.offersService.getAllOffers();
+    private offersService: Offers
+  ) {
+    this.offers.set(this.offersService.getAllOffers());
   }
 
   public onLike(offer: Offer) {
-    const toggleLike = this.offersService.toggleLike(offer);
+    const vote = this.offersService.toggleLike(offer);
+    this.offersService.setVotes(vote);
 
-    this.offersService.setVotes(toggleLike);
+    this.offers.set([...this.offers()]);
   }
 
   public onDislike(offer: Offer) {
-    const toggleDislike = this.offersService.toggleDislike(offer);
+    const vote = this.offersService.toggleDislike(offer);
+    this.offersService.setVotes(vote);
 
-    this.offersService.setVotes(toggleDislike);
+    this.offers.set([...this.offers()]);
   }
 
   public navigateToOfferDetails(offerId: number) {

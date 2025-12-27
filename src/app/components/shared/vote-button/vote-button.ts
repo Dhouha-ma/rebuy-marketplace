@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-vote-button',
   imports: [],
   templateUrl: './vote-button.html',
   styleUrl: './vote-button.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VoteButton {
   @Input() icon: string = '';

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Offer } from '../../types/offer-type';
@@ -8,6 +8,7 @@ import { Offer } from '../../types/offer-type';
   imports: [CommonModule],
   templateUrl: './card.html',
   styleUrl: './card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Card {
   @Input() offer!: Offer;
